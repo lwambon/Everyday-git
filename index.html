@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Git</title>
+    <link rel="shortcut icon" href="images/gitimg.png" type="image/x-icon">
+   
+<body>
+    <div style=" display: flex; align-items: center; justify-content: center;padding:20px; gap:10px;          
+    text-align: center" font-size="40px">
+        <img src="images/gitimg.png" alt="git">
+
+    <h1>Everyday Git</h1>
+    </div>
+    <h2>What is Git?</h2>
+    <p>Git is a free and open source distributed <em>version control system </em>
+        designed to handle everything from small to very large projects with speed and efficiency.</p>
+    <p><b>Version control systems</b> are a category of software tools that helps in recording 
+        changes made to files by keeping a track of modifications done in the code.
+        By maintaining a history of changes, a <em>VCS</em> enables developers to manage their projects more efficiently,
+         whether they are working alone or as part of a team.
+        There are several version control systems available, such as <b>Subversion (SVN)</b>, <b>Mercurial</b>, 
+        and <b>Perforce</b>, this blog will focus on Git.
+        Git is widely used due to its distributed nature and robust feature set,
+         making it a popular choice for developers around the globe.
+        We will also explore GitHub, 
+        a platform that integrates with Git to provide a collaborative environment for managing and
+         sharing Git repositories.
+        In this blog I will be diving deeper into how Git and GitHub work and 
+        how they can enhance your development workflow.</p>
+
+        <h3>Installing Git</h3>
+        <p>To check if Git is already installed on your machine,open your terminal or command prompt and type <code>git --version</code>. 
+            If Git is not installed, download the installer from
+             the <b><a href="https://git-scm.com/downloads">official Git website</a> </b> and follow the installation instructions for your operating system.
+            Once installed, verify the installation by running <code>git --version</code> <br>
+            <img src="Images/version-git.JPG" alt="version of git installed"> <br>
+            again to ensure Git is correctly set up on your system.</p>
+        <h3>Configuring Git</h3>
+        <p>Set up Git with your personal username and email address.</p>
+        <h5>Follow the steps below:</h5>
+        <ol>
+            <li>Open your terminal or command prompt.</li>
+            <li>Set your username by typing:
+                 <br><b><em><code>git config --global user.name "Your Name"</code></em></b></li><br>    
+                <img src="images/usernameg.JPG" alt="username configuration"><br><br>
+            <li>Set your email address by typing: 
+                <br> <b><em><code>git config --global user.email "your.email@example.com"</em></b></code></li><br>
+            <img src="images/emailg.JPG" alt="email configuration"><br><br>
+            <li>Verify your configuration by running:
+                <br><b><em><code>git config --global --list</code></em></b></li>
+            <img src="images/list.JPG" alt="configuration image">
+        </ol>
+
+    <h3>Intializing a Git repository</h3>
+        <p>To start using Git for your project, you need to initialize a Git repository. <br>
+            This command creates a hidden <code>.git</code> directory in your project folder, 
+            which contains all the necessary files for version control. Here’s how you do it:</p>
+        <ol>
+            <li>Navigate to your project folder in the terminal or command prompt</li> <br>
+            <li>Initialize the repository by <br> <b><em> <code>git init
+            </code></em></b></li><br>
+            <img src="images/inits.JPG" alt="git iniitialization">
+            <li>Verify the repository setup by listing the contents :<br>
+                 <b><em><code>ls -a</code></em></b></li>
+        </ol>
+    <h3>Adding files to the staging area</h3>
+    <p>In Git, the staging area  is an intermediate space where you prepare your files before committing them to the repository. 
+        It acts as a buffer between your working directory and the repository, 
+        allowing you to review and organize changes before finalizing them.</p>
+        <h5>Steps to Add Files to the Staging Area</h5>
+        <ol>
+            <li>Check the status of your working directory to see which files are untracked or modified: <br>
+            <b> <em> <code>git status
+            </code></em></b> <br>
+            <img src="images/status.JPG" alt="git status"> <br>
+            This command will list files that have been changed but not yet added to the staging area</li>
+            
+            <li>Add files to the staging area by using: <br> <b> <em> <code>git add filename
+            </code></em></b> <br> 
+            <img src="images/filename.JPG" alt="add one filename"> <br> <br> or <br>
+            Replace filename with the name of the file you want to stage.
+             To add all files in the directory, you can use: <b>
+                <em> <code>git add .
+                </code></em>
+             </b></li>
+             <img src="images/add.JPG" alt="git add files"> <br>
+             <li>Verify staged files by running: <br> b
+             <em> <code>git status
+            </code></em></li>
+            <img src="images/status2.JPG" alt="git add">
+        </ol>
+    
+    <h3>Commiting changes</h3> 
+    <p>Committing changes is a fundamental step in using Git.
+         A commit is like a snapshot of your project at a particular point in time. 
+        It captures the state of your files in the staging area and records it in the repository's history.</p> <br>
+        <h5>How to Commit Changes</h5>  <br>
+        <ol>
+            <li>Stage Your Changes: Before you can commit, you need to add your changes to the staging area.
+                 <br> <b> <em><code>git add filename
+                    <br>
+                    <img src="images/filename.JPG" alt="filename"> <br>
+            </code></em></b>Or add all changes: <b> <em> <code>git add .
+            </code></em></b> <br> <br>
+            <img src="images/add.JPG" alt=" add a file"><br>
+            </li>
+            <li>Commit Your Changes: To commit, use the following command:
+                 <br> <b><em><code>git commit -m "Your commit message here"
+            </code></em></b></li>
+            <img src="images/commit.JPG" alt="commit message">
+        </ol> 
+
+    <h3>Branches</h3>    
+    <p>In Git, a branch is like a separate workspace where you can make changes without affecting the main project. 
+        Branches are important because they allow you to:</p>
+        <ul>
+            <li>Work Independently: Develop new features or fix bugs without disrupting the main code.</li>
+            <li>Collaborate Efficiently: Multiple team members can work on different tasks simultaneously.</li>
+            <li>Experiment Safely: Try out new ideas without risking the stability of your main project.</li>
+        </ul>
+        <p>Branches help keep your code organized and manageable, making development smoother and more collaborative.</p>
+        <h4>Creating a branch</h4>
+        <p>Creating a branch in Git allows you to work on a new feature or fix independently from the main codebase.</p>
+        <h5>Here's how to create a new branch:</h5>
+        <ol>
+            <li>Open your terminal or command prompt.</li>
+            <li>Create a new branch by typing: <br>
+                 <b><em> <code>git branch branch_name
+            </code></em></b> Replace branch_name with the name you want for your branch.</li>
+           <img src="Images/newbranch.JPG" alt="new branch" >
+            <li>Switch to the new branch by using: br <b> <em><code>git checkout branch_name
+            </code></em></b> 
+            <br> <br>
+            <img src="images/checkout.JPG" alt="alt to switch"> <br>
+            Alternatively, you can create and switch to the branch in one step with: <br> <b> <em> <code>git checkout -b branch_name
+            </code></em></b></li> <br>
+            <li>Verify your branch by running: <br> <b><em><code>git branch
+            </code></em></b></li>
+            <img src="images/branch.JPG" alt="verify branch you are in">
+        </ol>
+
+     <h4>Viewing all branches</h4>   
+     <p>To manage your branches effectively, 
+        you need to know how to view all branches in your repository and identify the currently active branch.
+         Here’s how to do it:</p>
+         <ol>
+            <li>View All Branches: To see a list of all branches in your repository, use: <br>
+            <b><em><code>git branch
+            </code></em></b></li>
+            <img src="images/branch.JPG" alt="view all branches"> <br>
+            <li>View Remote Branches: If you want to see branches that exist on a remote repository, use: <br>
+            <b><em><code>git branch -r
+            </code></em></b></li>
+            <img src="images/branchr.JPG" alt="view remote branches"> <br>
+            <li>View Both Local and Remote Branches: To view all branches, both local and remote, use: <br>
+            <b><em><code>git branch -a
+            </code></em></b></li>
+            <img src="images/brancha.JPG" alt="view both local and remote branches">
+
+         </ol>
+
+     <h4>Switching active branches</h4>    
+     <p>Switching branches in Git allows you to move between different lines of development in your project.
+         Here’s how you can change your active branch:</p>
+         <ol>
+            <li>Open your terminal or command prompt.</li>
+            <li>Switch to another branch by typing: <br>
+            <b><em><code>git checkout branch_name
+            </code></em></b> <br>
+            <img src="images/checkout.JPG" alt="switch branch">
+           </li>
+
+            <li>Alternatively, use Git Switch (if available) for a simpler command: <br>
+            <b><em><code>git switch branch_name
+            </code></em></b> <br>
+            <img src="images/switch.JPG" alt="switch branch">
+        </li>
+
+            <li>Verify the active branch by running: <br>
+            <b><em><code>git branch
+            </code></em></b> <br>
+            <img src="images/branch.JPG" alt="git branch">
+        </li>
+         </ol>
+
+     <h4>Merging a branch</h4>    
+     <p>Merging branches in Git allows you to combine changes from one branch into another, 
+        typically bringing updates from a feature branch into the main branch. 
+        Here’s how to do it:</p>
+        <ol>
+            <li>Switch to the branch you want to merge changes into. 
+                For example, if you want to merge changes into the <code>main</code> branch, 
+                first switch to it: <br> 
+            <b><em> <code>git checkout main
+            </code></em></b> <br>
+            <img src="images/checkout.JPG" alt="git checkout">
+        </li>
+
+            <li>Merge the desired branch into your current branch. 
+                For instance, to merge changes from <code>feature_branch</code> into <code>main</code>, use: <br>
+            <b> <em><code>git merge feature_branch
+            </code></em></b> <br>
+            <img src="Images/merge.JPG" alt="merg">
+        </li>
+
+            <li>Resolve any conflicts if they arise. 
+                Git will notify you of conflicts that need to be resolved manually before completing the merge.</li>
+
+                <li>Commit the merge if there were conflicts resolved manually: <br>
+                <b><em><code>git commit -m "Merged feature_branch into main"
+                </code></em></b> <br>
+                <img src="images/commitm.JPG" alt="git commit ">
+            </li>
+        </ol>
+
+     <h4> Deleting a branch</h4>   
+     <p>Deleting branches helps keep your repository clean by removing branches that are no longer needed.
+         Here’s how to delete both local and remote branches:</p>
+         <ol>
+            <li>Open your terminal or command prompt.</li>
+            <li>Delete a local branch by typing: <br>
+            <b><em><code>git branch -d branch_name
+            </code></em></b> <br>
+            <img src="Images/deleted.JPG" alt="git delete"> <br>
+            The -d flag ensures the branch is only deleted if it has been fully merged.
+             Use -D to force delete a branch, even if it hasn’t been merged: <br>
+            <b><em><code>git branch -D branch_name
+            </code></em></b> <br>
+        <img src="Images/deleteDe.JPG" alt="git delete -D"></li>
+            <li>Verify the deletion by running: <br>
+            <b><em><code>git branch
+            </code></em></b> <br> This command will list all remaining branches. <br>
+            <img src="Images/master.JPG" alt="git branch "></li>
+        </li>
+           
+         </ol>
+
+     <h4>Pushing Changes to GitHub Using Git</h4>  
+     <p>To push your local changes to a GitHub repository, follow these steps:</p> 
+     <ol>
+        <li>Ensure Your Local Repository Is Connected to GitHub
+            First, make sure your local repository is linked to a GitHub repository.
+             You can check this with: <br>
+            <b><em><code>git remote -v
+            </code></em></b> <br>
+            <img src="Images/remoteV.JPG" alt="git remote -v"> <br>
+            This command lists the remote repositories associated with your local repository.
+             If you need to add a remote, use:
+            <br> <b><em><code>git remote add origin https://github.com/username/repository.git
+            </code></em></b> <br>
+            <img src="Images/addRemote.JPG" alt=" git remote add origin">
+        </li>
+            <li>Stage and Commit Your Changes
+                Before pushing, ensure you have committed your changes: <br>
+            <b><em><code>git add .
+            </code></em></b> <br>
+            <img src="images/add.JPG" alt="git add"> <br>
+            This stages all changes. Then commit them with:
+        <br> <b><em><code>git commit -m "Your commit message"
+        </code></em></b> <br>
+        <img src="Images/commitE.JPG" alt="commit message">
+    </li>
+            <li>Push Changes to GitHub
+                Push your committed changes to GitHub :<br>
+                <b><em><code>git push origin branch_name
+                </code></em></b> <br>
+                <img src="Images/push.JPG" alt="push origin branch-name"> <br>
+                Replace branch_name with the name of the branch you want to push to (e.g., main or master).
+            </li>
+            <br>
+            <li>Check your GitHub repository online to confirm that your changes have been uploaded.</li>
+     </ol> 
+     <div style=" margin-bottom: 40px; align-items: center; margin-right:10px;">
+        <h3>Next Steps in Your Git Journey</h3>    
+ <p>Now that you’ve learned how to use Git for basic version control and pushing changes to GitHub,
+     here are some recommended next steps to deepen your understanding and enhance your workflow:</p>
+     <ol>
+        <li><b>Learn About Branch Merging and Rebasing:</b>
+            Understanding how to merge branches and use rebasing techniques 
+            will help you manage complex workflows and maintain a clean project history. </li> <br>
+            <li><b>Explore Advanced Git Commands:</b> Familiarize yourself with advanced Git commands like <code>git stash</code>
+                , <code>git cherry-pick</code>, and <code>git revert</code>. 
+                These commands offer additional flexibility for managing your changes and handling various development scenarios.</li>
+            <li><b>Master GitHub Features: </b>
+                    Dive into GitHub features such as Pull Requests, Issues, and GitHub Actions. </li>
+            <li><b>Integrate with Git Tools:</b> Explore tools that integrate with Git, such as Git GUI clients 
+                (e.g., SourceTree, GitKraken) and continuous integration services (e.g., Travis CI, CircleCI).</li>
+            <li><b>Collaborate with Git:</b>
+                 Practice using Git in collaborative environments by contributing 
+                 to open-source projects or working on team projects.</li>
+     </ol>
+
+     <p>By continuing to explore these areas, you'll build a stronger foundation in version control and collaboration,
+         making you more effective and efficient in managing your codebase.</p>
+     </div>
+</body>
+</html>
